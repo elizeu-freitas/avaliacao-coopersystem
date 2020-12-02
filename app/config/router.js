@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Investimentos from './../component/investimentos/Investimentos';
+import Resgate from './../component/resgate/Resgate';
 
 const Stack = createStackNavigator();
 
@@ -13,6 +14,13 @@ function AppStack() {
           <Stack.Screen
             name="Investimentos"
             component={Investimentos}
+            options={{
+              title: 'RESGATE',
+            }}
+          />
+          <Stack.Screen
+            name="Resgate"
+            component={Resgate}
             options={{
               title: 'RESGATE',
             }}

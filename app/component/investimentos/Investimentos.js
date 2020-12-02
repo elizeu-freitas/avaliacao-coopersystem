@@ -7,7 +7,8 @@ import { response } from './../../config/data';
 class Investimentos extends Component {
 
     handleRowPress = (item) => {
-        console.info(item);
+        console.debug({'investimento' : item});
+        this.props.navigation.navigate('Resgate', {'investimento' : item});
     }
 
     render() {
@@ -22,7 +23,7 @@ class Investimentos extends Component {
                 <FlatList
                     data={response.data.listaInvestimentos}
                     renderItem={({item}) =>
-                        <TouchableHighlight underlayColor={colors.rowUnderlay} >
+                        <TouchableHighlight underlayColor={colors.rowUnderlay} onPress={() => this.handleRowPress(item)}>
                             <View style={styles.row}>
                                 <View>
                                     <Text style={styles.nomeInvestimento}>{ item.nome } </Text>
